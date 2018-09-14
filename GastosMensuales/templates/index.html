@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        
+        <h1> Gastos </h1>
+        {% for gastos in todos_los_gastos %}
+        
+        <li class="collection-item">
+           {{ gastos.date }}, {{ gastos.categoria }}  , Total de Gastos: ${{gastos.suma}}
+        </li>
+        
+        
+        <ul>
+            {% for prod in gastos.productos.all %}
+        <li >
+           {{ prod.nombreP }}, ${{ prod.precio }} 
+        </li>
+            {% endfor%}
+        </ul>
+        
+        {% endfor%}
+    </body>
+</html>
